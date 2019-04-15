@@ -1,0 +1,48 @@
+<ns0:test-suite xmlns:ns0="urn:model.allure.qatools.yandex.ru" start="1553887960017" stop="1553887997435">
+  <name>test_intergrated</name>
+  <labels/>
+  <test-cases>
+    <test-case start="1553887960017" status="failed" stop="1553887997435">
+      <name>test_register</name>
+      <failure>
+        <message>AssertionError: assert 'OK' == {'errorDescription': 'ACN_1127', 'message': 'Invalid username. Please try again.', 'resultCode': 'KO', 'resultObj': '', ...}
+ +  where 'OK' = validate()</message>
+        <stack-trace>environment_setup = None
+
+    def test_register(environment_setup):
+        driver.implicitly_wait(300) # seconds
+        myDynamicElement = driver.find_element_by_link_text("Got it!")
+        myDynamicElement.click()
+        driver.find_element_by_id("betaField").send_keys("!060v0d@c0m_o82")
+        driver.implicitly_wait(100) # seconds
+        myDynamicElement = driver.find_element_by_css_selector(".btn.btn-ctl.button_login")
+        myDynamicElement.click()
+        driver.find_element_by_name("first_name").send_keys(name)
+        driver.find_element_by_name("surname").send_keys(surname)
+        driver.find_element_by_name("phoneNumber").send_keys(contact)
+        driver.find_element_by_name("userPassword").send_keys(password)
+        driver.find_element_by_name("userPasswordConfirm").send_keys(confirm)
+        driver.find_element_by_id("terms-and-condition").click()
+        driver.implicitly_wait(100)
+        wait = WebDriverWait(driver, 10)
+        myDynamicElement = wait.until(EC.visibility_of_element_located((By.CSS_SELECTOR, "button.btn.btn-ctl.btn-block.btn-registration.submit")))
+        myDynamicElement.click()
+        if(run_first()=="KO"):
+&gt;           assert validate()== pjson
+E           AssertionError: assert 'OK' == {'errorDescription': 'ACN_1127', 'message': 'Invalid username. Please try again.', 'resultCode': 'KO', 'resultObj': '', ...}
+E            +  where 'OK' = validate()
+
+test_intergrated.py:61: AssertionError</stack-trace>
+      </failure>
+      <attachments/>
+      <labels>
+        <label name="severity" value="normal"/>
+        <label name="thread" value="15276-MainThread"/>
+        <label name="host" value="PTALTP00010292"/>
+        <label name="framework" value="pytest"/>
+        <label name="language" value="cpython3"/>
+      </labels>
+      <steps/>
+    </test-case>
+  </test-cases>
+</ns0:test-suite>

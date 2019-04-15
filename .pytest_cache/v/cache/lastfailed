@@ -1,0 +1,4 @@
+{
+  "venv/test_intergrated.py::test_function": true,
+  "venv/test_intergrated.py::test_register": true
+}
